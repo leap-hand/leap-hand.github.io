@@ -111,7 +111,7 @@
 
 <section class="hero teaser">
   <div class="content has-text-centered">
-      <video width="960" height="720" loop muted controls picture-in-picture>
+      <video width="960" height="720" loop autoplay muted controls picture-in-picture id="teaser">
         <source src="./resources/teaser.mp4" type="video/mp4">
       </video>
     </div>
@@ -370,7 +370,7 @@
 
 <script>
   var mainLoopId = setInterval(function(){
-    $('video').each(function(){
+    $('video').not('#teaser').each(function(){
   if ($(this).is(":in-viewport")) {
       $(this)[0].play();
   } else {

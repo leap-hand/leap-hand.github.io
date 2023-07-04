@@ -44,17 +44,18 @@
 
   <title>LEAP Hand: Low-Cost, Efficient, and Anthropomorphic Hand for Robot Learning</title>
 
-  <link href="https://fonts.googleapis.com/css?family=Google+Sans|Noto+Sans|Castoro"
+  <link href="./static/css/fonts.googleapis.com_css_family=Google+Sans_Noto+Sans_Castoro.css"
         rel="stylesheet">
 
   <link rel="stylesheet" href="./static/css/bulma.min.css">
   <link rel="stylesheet" href="./static/css/bulma-carousel.min.css">
   <link rel="stylesheet" href="./static/css/bulma-slider.min.css">
   <link rel="stylesheet" href="./static/css/fontawesome.all.min.css">
-  <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/jpswalsh/academicons@1/css/academicons.min.css">
+  <link rel="stylesheet" href="./static/css/cdn.jsdelivr.net_gh_jpswalsh_academicons@1_css_academicons.min.css">
   <link rel="stylesheet" href="./static/css/index.css">
-  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
-  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <link rel="stylesheet" href="./static/css/cdn.jsdelivr.net_npm_bootstrap@5.1.3_dist_css_bootstrap.min.css">
+  <script src="./static/js/ajax.googleapis.com_ajax_libs_jquery_3.5.1_jquery.min.js"></script>
+  <script src="./static/js/isInViewport.min.js"></script>
   <script defer src="./static/js/fontawesome.all.min.js"></script>
   <script src="./static/js/bulma-carousel.min.js"></script>
   <script src="./static/js/bulma-slider.min.js"></script>
@@ -70,8 +71,11 @@
           <h1 class="title is-1 publication-title">LEAP Hand:</h1><h2 class = "title is-34 publication-title">Low-Cost, Efficient, and Anthropomorphic Hand for Robot Learning</h2>
           <div class="is-size-5 publication-authors">
             <span class="author-block">
-             <!--<span>Submitted to ICRA 2023</span> -->
-            </span>
+              <a>Kenneth Shaw</a><sup></sup>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+              <a href="https://anag.me">Ananye Agrawal</a><sup></sup>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+              <a href="https://www.cs.cmu.edu/~dpathak/">Deepak Pathak</a><sup></sup>
+              <br /><sup></sup>Carnegie Mellon University<br />
+            <span>RSS 2023</span>
           </div>
 
           <div class="column has-text-centered">
@@ -128,6 +132,40 @@
     </div>
   </div>
 </section>
+
+
+
+<section class="section">
+  <div class="container">
+    <div class="columns is-centered">
+      <div class="column is-full-width">
+        <h3 class="title is-3" style="text-align: center; padding-bottom: 10px;"><bold>Kinematics and Dexterity Comparison</bold></h3>
+        <tr>
+          <td>
+            <div class="row">
+              <div class="col">
+                <video class="center" playsinline autoplay loop muted src="./resources/video_segments/allegro_side_side.mp4" width="100%"
+                         style="border-radius:10px; "></video>
+              </div>
+              <div class="col">
+                <video class="center" playsinline autoplay loop muted src="./resources/video_segments/leap_c_side_side.mp4" width="100%"
+                       style="border-radius:10px; "></video>
+              </div>
+              <div class="col">
+                <video class="center" playsinline autoplay loop muted src="./resources/video_segments/leap_side_side.mp4" width="100%"
+                       style="border-radius:10px; "></video>
+              </div>
+            </div>
+            <br>
+            <br>
+          </td>    
+        </tr>
+        <h4  style="text-align: center; padding-bottom: 10px;"> LEAP hand demonstrates side to side dexterity in both the finger up and finger down configuration <br> thanks to it's universal abduction-adduction mechanism.</h4>
+      </div> 
+    </div>
+  </div>
+</section>
+
 
 <section class="section">
   <div class="container">
@@ -187,8 +225,7 @@
   <div class="container">
     <div class="columns is-centered">
       <div class="column is-full-width">
-        <h3 class="title is-3" style="text-align: center; padding-bottom: 10px;"><bold>Human-like Versatility: </bold>Grasping Test</h3>
-        
+        <h3 class="title is-3" style="text-align: center; padding-bottom: 10px;"><bold>Human-like Versatility: </bold>Grasping Test</h3>  
         <tr>
           <td>
             <div class="row">
@@ -213,13 +250,13 @@
                 <img src="./resources/figures/teleoperation.PNG" alt="Teleoperation Test Table"  width="100%"  >
               </div>  
           </div>
+          
           </td>
         </tr>
       </div> 
     </div>
   </div>
 </section>
-
 <section class="section">
   <div class="container">
     <div class="columns is-centered">
@@ -293,9 +330,13 @@
           <td>
             <div class="row">
               <div class="col">
-                <video class="center" playsinline autoplay loop muted src="./resources/video_segments/in_hand_manip.mp4" width="40%"
+                <video class="center" playsinline autoplay loop muted src="./resources/video_segments/in_hand_manip.mp4" width="100%"
                          style="border-radius:10px; "></video>
               </div>
+              <div class="col">
+                <video class="center" playsinline autoplay loop muted src="./resources/video_segments/in_hand_real_world.mp4" width="100%"
+                       style="border-radius:10px; "></video>
+            </div>
             </div>
             <br>
             <br>
@@ -324,5 +365,19 @@
   </div>
 </footer>
 
+
+<script>
+  var mainLoopId = setInterval(function(){
+    $('video').each(function(){
+  if ($(this).is(":in-viewport")) {
+      $(this)[0].play();
+  } else {
+      $(this)[0].pause();
+  }
+  })
+},200);
+
+
+</script>
 </body>
 </html>

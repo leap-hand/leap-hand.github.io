@@ -1,1 +1,1 @@
-# leap-hand.github.io
+Please see leaphand.com for further details.
